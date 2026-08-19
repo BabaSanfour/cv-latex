@@ -87,13 +87,16 @@
         \textbf{#1} & {\small #2} \\
         \textit{#3} & {\small\textit{#4}}
     \end{tabularx}
-    \vspace{3pt}
+    \vspace{-1pt}
 }
 
 \newcommand{\cvdetail}[1]{%
-    \vspace{-3pt}
     {\small\color{cvgray} #1\par}
-    \vspace{4pt}
+    \vspace{5pt}
+}
+
+\newcommand{\cvnodetailspace}{%
+    \vspace{5pt}
 }
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
@@ -152,6 +155,8 @@
     {Ariana, Tunisia}
     {Engineering Diploma in Telecommunications -- Smart Imaging Applications}
     {Sept. 2018--Oct. 2021}
+
+\cvnodetailspace
 
 \cventry
     {University of Sfax -- Sfax Preparatory Institute for Engineering Studies}
