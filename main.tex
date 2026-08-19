@@ -1,141 +1,84 @@
-%------------------------
-% Resume Template
-% Author : Anubhav Singh
-% Github : https://github.com/xprilion
-% License : MIT
-%------------------------
+\documentclass[10pt,a4paper]{article}
 
-\documentclass[a4paper,20pt]{article}
+% Typography
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{newtxtext}
+\usepackage{microtype}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+% Page layout
+\usepackage[
+    top=0.65in,
+    bottom=0.65in,
+    left=0.70in,
+    right=0.70in
+]{geometry}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+% Lists
 \usepackage{enumitem}
-\usepackage[pdftex]{hyperref}
+\setlist[itemize]{
+    leftmargin=1.25em,
+    label=\textbullet,
+    itemsep=1.5pt,
+    topsep=2pt,
+    parsep=0pt,
+    partopsep=0pt
+}
+
+% Tables and alignment
+\usepackage{tabularx}
+\usepackage{array}
+
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+
+% Section headings
+\usepackage{titlesec}
+
+\titleformat{\section}
+    {\large\bfseries}
+    {}
+    {0pt}
+    {}
+    [\vspace{1.5pt}\titlerule]
+
+\titlespacing*{\section}
+    {0pt}
+    {11pt}
+    {5pt}
+
+% Links
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+\hypersetup{
+    pdftitle={Curriculum Vitae -- Hamza Abdelhedi},
+    pdfauthor={Hamza Abdelhedi}
+}
+
+% Page-break control
+\usepackage{needspace}
+
+% Footer
+\usepackage{xcolor}
+\definecolor{cvgray}{HTML}{555555}
+
 \usepackage{fancyhdr}
+\usepackage{lastpage}
 
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
+\fancyhf{}
+\fancyfoot[L]{\footnotesize\color{cvgray} Hamza Abdelhedi}
+\fancyfoot[R]{\footnotesize\color{cvgray} \thepage\ /\ \pageref*{LastPage}}
+
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.530in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.45in}
-\addtolength{\textheight}{1in}
-
-\urlstyle{rm}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-10pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
-}
-\newcommand{\TAItem}[1]{
-  \item{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\PaperItem}[6]{
-  \item\small{
-    \textit{[#1]}\textbf{ #2}
-  }
-  \newline
-  \small{
-    \textit{#3. }{#4 }{#5 }{[#6]}
-  }
-}
-
-\newcommand{\resumeItemBasic}[1]{
-  \item\small{
-    {#1}}
-}
-
-
-\newcommand{\resumeItemWithoutTitle}[1]{
-  \item\small{
-    {\vspace{-2pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{#3} & \textit{#4} \\
-    \end{tabular*}\vspace{-5pt}
-}
-\newcommand{\resumeSubSubheading}[2]{
-  \vspace{-1pt}
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{\textit{#1}} & \textit{#2} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\TeachingAssistant}[5]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1;} {#2} & #3 \\
-       #4  \\
-       #5
-        
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\Award}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{[#1]: }\textbf{#2;} #3 &  #4 \\
-    \end{tabular*}
-
-}
-
-
-\newcommand{\Talk}[5]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1: }{#2} & #3 \\
-      \textit{#4} & \textit{#5} \\
-    \end{tabular*}\vspace{-5pt}
-}
-
-\newcommand{\Poster}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1 } & #2 \\
-    \end{tabular*}
-
-      \textit{Title: #3}{#4} \\
-}
-
-
-
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
-
-\renewcommand{\labelitemii}{$\circ$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
