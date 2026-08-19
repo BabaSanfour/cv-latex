@@ -80,6 +80,19 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+% CV entries
+\newcommand{\cventry}[4]{%
+    \Needspace{3\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}Y R{0.24\textwidth}@{}}
+        \textbf{#1} & {\small #2} \\
+        \textit{#3} & {\small\textit{#4}}
+    \end{tabularx}
+}
+
+\newcommand{\cvdetail}[1]{%
+    {\small\color{cvgray} #1\par}
+    \vspace{4pt}
+}
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -93,12 +106,8 @@
 
     {\small
     hamza.abdelhedi [at] umontreal.ca
-    }\par
-
-    \vspace{1.5pt}
-
-    {\small
-    \href{https://www.hamzaabdelhedi.com}{hamzaabdelhedi.com}
+    \quad\textbullet\quad
+    \href{https://www.hamzaabdelhedi.com}{Website}
     \quad\textbullet\quad
     \href{https://github.com/BabaSanfour}{GitHub}
     \quad\textbullet\quad
@@ -107,4 +116,59 @@
     \href{https://www.linkedin.com/in/hamza-abdelhedi/}{LinkedIn}
     }\par
 }
+
+\section{Education}
+
+\cventry
+    {Université de Montréal -- Faculty of Medicine}
+    {Montréal, Canada}
+    {PhD in Biomedical Engineering}
+    {Sept. 2024--Present}
+
+\cvdetail{
+    Supervisor: Karim Jerbi
+    \quad\textbullet\quad
+    Research affiliations: Cognitive \& Computational Neuroscience Lab (CoCo Lab), Mila -- Quebec AI Institute
+}
+
+\cventry
+    {Université de Montréal -- Department of Computer Science and Operations Research (DIRO)}
+    {Montréal, Canada}
+    {MSc in Computer Science -- Artificial Intelligence}
+    {Sept. 2022--Aug. 2024}
+
+\cvdetail{
+    Supervisor: Karim Jerbi
+    \quad\textbullet\quad
+    Co-supervisor: Shahab Bakhtiari
+    \quad\textbullet\quad
+    Research affiliations: CoCo Lab, Mila -- Quebec AI Institute
+}
+
+\cventry
+    {SUP'COM -- Higher School of Communication of Tunis}
+    {Ariana, Tunisia}
+    {Engineering Diploma in Telecommunications -- Smart Image Applications}
+    {Sept. 2018--Oct. 2021}
+
+\cventry
+    {Sfax Preparatory Institute for Engineering Studies}
+    {Sfax, Tunisia}
+    {Preparatory Studies in Mathematics and Physics}
+    {Sept. 2016--June 2018}
+
+\cvdetail{
+    National engineering entrance rank: 153/1,500 (top 10\%)
+}
+
+\cventry
+    {Farhat Hached Pioneer High School}
+    {Sfax, Tunisia}
+    {Baccalaureate in Mathematics}
+    {Sept. 2012--June 2016}
+
+\cvdetail{
+    Selective national Pioneer High School track
+}
+
 \end{document}
