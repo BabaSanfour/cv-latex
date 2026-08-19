@@ -1,0 +1,29 @@
+name: Compile CV
+
+on:
+  push:
+    branches:
+      - main
+      - cv-rebuild-2026
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: hamza-cv-${{ github.ref_name }}
+          path: main.pdf
