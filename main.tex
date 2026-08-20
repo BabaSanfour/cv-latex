@@ -100,26 +100,27 @@
 }
 
 % Research and professional experience
-\newcommand{\cvresearchentry}[3]{%
+\newcommand{\cvresearchentry}[4]{%
     \Needspace{4\baselineskip}
-    \begin{tabularx}{\textwidth}{@{}Y R{0.24\textwidth}@{}}
-        \textbf{#1} & {\small\textit{#2}} \\
-        {\small\color{cvgray} #3} & {}
+    \begin{tabularx}{\textwidth}{@{}Y R{0.22\textwidth}@{}}
+        \textbf{#1} & {\small\textit{#2}} \\[-5pt]
+        {\small\color{cvgray} #3} &
+        {\small\color{cvgray} #4}
     \end{tabularx}
-    \vspace{-2pt}
+    \vspace{-3pt}
 }
 
 \newenvironment{cvresearchitems}
-    {\begin{itemize}[
-        leftmargin=1.25em,
-        itemsep=1.5pt,
-        topsep=2pt,
+    {\begingroup\small
+    \begin{itemize}[
+        leftmargin=1.15em,
+        labelsep=0.45em,
+        itemsep=0.5pt,
+        topsep=1pt,
         parsep=0pt,
         partopsep=0pt
     ]}
-    {\end{itemize}\vspace{5pt}}
-  
-
+    {\end{itemize}\endgroup\vspace{4pt}}
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -205,35 +206,30 @@
 \cvresearchentry
     {Graduate Research Assistant}
     {Sept. 2024--Present}
-    {Cognitive \& Computational Neuroscience Lab (CoCo Lab)
+    {Cognitive Computational Neuroscience Lab (CoCo Lab)
     \quad\textbullet\quad
-    Mila -- Quebec AI Institute
-    \quad\textbullet\quad
-    Faculty of Medicine, Université de Montréal}
+    Mila -- Quebec AI Institute}
+    {Montréal, Canada}
 
 \begin{cvresearchitems}
+    \item \textbf{Dynamic Decision-making in humans:} Investigating neural dynamics using EEG, MEG,
+    and behavior with low-dimensional trajectories, connectivity and
+    complexity measures, and computational models.
 
-    \item Investigating the neural and computational mechanisms of dynamic
-    decision-making using EEG, MEG, and behavioral data, with analyses spanning
-    low-dimensional neural trajectories, functional connectivity, complexity
-    metrics, and computational modeling.
+    \item \textbf{Foundation models:} Benchmarking existing EEG/MEG foundation
+    models and training new models, evaluating representations, cross-dataset
+    generalization, and downstream performance.
 
-    \item Benchmarking existing EEG/MEG foundation models and developing new
-    models for large-scale neural datasets, with a focus on representation
-    quality, generalization across datasets, and downstream neural decoding tasks.
+    \item \textbf{Research software:} Developing reusable EEG/MEG tools and
+    pipelines for lab-wide use, including MNE-Denoise, CoCo-PiPe, and Jamica.
 
-    \item Developing reusable research software and analysis pipelines for
-    lab-wide use, including tools such as MNE-Denoise, CoCo-PiPe, and Jamica,
-    to support scalable and reproducible EEG/MEG processing and analysis.
+    \item \textbf{Research infrastructure:} Standardizing and managing shared lab
+datasets and computational resources; Led a successful Alliance Canada
+    Resource Allocation Competition (RAC) application securing 715 CPU-years
+    and 150 RGU-years (score: 4.3/5).
 
-    \item Led a successful Alliance Canada Resource Allocation Competition (RAC)
-    application, securing 715 CPU-years and 150 RGU-years of computing resources
-    (score: 4.3/5), and contributing to the management of shared computational
-    resources and research data.
-
-    \item Mentoring junior researchers and developing technical documentation,
-    tutorials, and onboarding materials for new lab members.
-
+    \item \textbf{Mentoring:} Mentoring junior researchers and developing
+    technical documentation, tutorials, and onboarding materials.
 \end{cvresearchitems}
 
 \cvresearchentry
@@ -241,49 +237,46 @@
     {Jan. 2025--Present}
     {CHU Sainte-Justine
     \quad\textbullet\quad
-    Montréal, Canada}
+    With Dr. Alexander G. Weil
+    \quad\textbullet\quad
+    Dr. Aristides Hadjinicolaou}
+    {Montréal, Canada}
 
 \begin{cvresearchitems}
-    \item Curated and structured a heterogeneous clinical dataset of
-    approximately 1,300 EEG recordings from pediatric patients with epilepsy,
-    ADHD, and autism, including medication and comorbidity information, transforming
-    fragmented clinical data into an analysis-ready research dataset.
+    \item \textbf{Clinical data:} Curated and structured approximately 1,300
+    pediatric EEG recordings spanning epilepsy, ADHD, and autism.
 
-    \item Extracted electrophysiological features and applied dimensionality
-    reduction, machine-learning, and foundation-model approaches, including
-    embedding extraction, linear probing, and model fine-tuning.
+    \item \textbf{Computational analysis:} Extracted electrophysiological
+    features and applied dimensionality reduction, machine learning, and
+    foundation-model analyses, including embeddings, linear probing,
+    and fine-tuning.
 
-    \item Investigating medication-related differences in pediatric ADHD,
-    including medicated versus unmedicated patients and comparisons between
-    medication groups, with analyses stratified by age, sex, and comorbidities.
-
-    \item Collaborating with Dr. Alexander G. Weil and
-    Dr. Aristides Hadjinicolaou on pediatric neurophysiology research involving
-    psychostimulant and antiseizure medication use.
-
+    \item \textbf{Medication effects:} Investigating medicated versus
+    unmedicated ADHD and medication-group differences, including effects of
+    age, sex, and comorbidities.
 \end{cvresearchitems}
+
 
 \cvresearchentry
     {Graduate Research Assistant}
     {Sept. 2022--Aug. 2024}
-    {Cognitive \& Computational Neuroscience Lab (CoCo Lab)
+    {CoCo Lab
     \quad\textbullet\quad
-    Systems Neuroscience and AI Lab
+    Systems Neuroscience and AI Lab - SNAILab
     \quad\textbullet\quad
-    Mila -- Quebec AI Institute
-    \quad\textbullet\quad
-    DIRO, Université de Montréal}
+    Mila}
+    {Montréal, Canada}
 
 \begin{cvresearchitems}
-    \item Investigated the temporal dynamics of face recognition in the human
-    brain, with a focus on how familiarity shapes neural representations of
-    familiar and unfamiliar faces over time.
+    \item \textbf{Face familiarity:} Investigated how familiarity shapes the
+    temporal evolution of neural representations of familiar and unfamiliar
+    faces.
 
-    \item Applied time-resolved multivariate and representational analyses to
-    MEG data and deep neural network features, comparing brain activity with
-    layer-wise model representations to characterize the computational
-    signatures of face familiarity.
+    \item \textbf{Computational analysis:} Applied time-resolved multivariate
+    and representational analyses to MEG and deep-network features to
+    characterize biological--artificial correspondences.
 \end{cvresearchitems}
+
 
 \cvresearchentry
     {Research Intern -- Engineering Graduation Project}
@@ -291,6 +284,7 @@
     {UNIQUE -- Unifying Neuroscience and Artificial Intelligence in Quebec
     \quad\textbullet\quad
     CoCo Lab}
+    {Montréal, Canada}
 
 \begin{cvresearchitems}
     \item Investigated human and artificial neural representations underlying
@@ -301,26 +295,24 @@
 \cvresearchentry
     {Machine Learning Intern}
     {July--Aug. 2020}
-    {SFM Technologies
-    \quad\textbullet\quad
-    Tunis, Tunisia}
+    {SFM Technologies}
+    {Tunis, Tunisia}
 
 \begin{cvresearchitems}
-    \item Developed machine-learning methods to identify electronic appliances
-    from electrical signals using state changes, harmonics, and device signatures.
+    \item Developed machine-learning methods for appliance identification from
+    electrical signals using state changes, harmonics, and device signatures.
 \end{cvresearchitems}
 
 
 \cvresearchentry
     {Natural Language Processing Intern}
     {July--Aug. 2019}
-    {HEXASTACK
-    \quad\textbullet\quad
-    Ariana, Tunisia}
+    {HEXASTACK}
+    {Ariana, Tunisia}
 
 \begin{cvresearchitems}
-    \item Developed NLP methods for Tunisian Arabic, including intent extraction,
-    named-entity-based keyword extraction, and sentence segmentation.
+    \item Developed Tunisian Arabic NLP methods for intent extraction,
+    keyword/NER extraction, and sentence segmentation.
 \end{cvresearchitems}
 
 \end{document}
