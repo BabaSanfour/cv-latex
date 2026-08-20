@@ -181,6 +181,21 @@
 % Software database
 \input{software.tex}
 
+% Awards and scholarships
+\newcommand{\cvaward}[4]{%
+    \Needspace{2.1\baselineskip}
+    \begingroup
+    \renewcommand{\arraystretch}{0.90}
+    \begin{tabularx}{\textwidth}{@{}Y r@{}}
+        {\small\textbf{#1} --- #2} &
+        {\small #3 \quad\textbullet\quad #4}
+    \end{tabularx}
+    \endgroup
+    \vspace{-10pt}
+}
+% Awards database
+\input{awards.tex}
+
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -268,7 +283,7 @@
 \cvresearchentry
     {Graduate Research Assistant}
     {Sept. 2024--Present}
-    {Cognitive \& Computational Neuroscience Lab (CoCo Lab) (CoCo Lab)
+    {Cognitive \& Computational Neuroscience Lab (CoCo Lab)
     \quad\textbullet\quad
     Mila -- Quebec AI Institute}
     {Montréal, Canada}
@@ -317,6 +332,25 @@
     and medication groups, stratified by age, sex, and comorbidities.
 \end{cvresearchitems}
 
+\cvresearchentry
+    {AI Lab Member / Research Contributor}
+    {2024--Present}
+    {Abundant Intelligences
+    \quad\textbullet\quad
+    Part-time since Mar. 2026}
+    {Montréal, Canada}
+
+\begin{cvresearchitems}
+    \item \textbf{AI development:} Supporting pods in developing AI systems and
+    language models for low-resource and Indigenous-language applications.
+
+    \item \textbf{Training \& knowledge mobilization:} Designed and delivered
+    technical workshops for the Future Imaginaries Workshop Series.
+
+    \item \textbf{Research infrastructure:} Helped design a new computational
+    infrastructure request supporting shared AI experimentation, local model
+    development, and community-governed research workflows.
+\end{cvresearchitems}
 
 \cvresearchentry
     {Graduate Research Assistant}
@@ -412,5 +446,42 @@
 \softwareCoCoPipe
 \softwareCoordRegion
 \softwareJamica
+
+\section{Awards \& Scholarships}
+
+\cvpubcategory{Scholarships \& Fellowships}
+
+\awardFacultyMedicine
+\awardImbizo
+\awardUniquePhD
+\awardCSMerit
+\awardCIRCA
+\awardCerebrum
+\awardUniqueMSc
+\awardCSInternational
+\awardMitacs
+
+\cvpubcategory{Awards \& Travel Grants}
+
+\awardCosyne
+\awardUniqueTravel
+\awardRBIQ
+\awardMAINPoster
+\awardIEEEAmbassador
+\awardSupcomChallenge
+\awardGreenIsland
+
+\section{Selected Scientific Training \& Summer Schools}
+
+\cventry
+    {Simons Computational Neuroscience Imbizo}
+    {Cape Town, South Africa}
+    {Selected Scholar}
+    {2026}
+
+\cvdetail{
+    Intensive computational neuroscience program spanning theoretical,
+    experimental, and data-driven approaches to neural systems.
+}
 
 \end{document}
