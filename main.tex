@@ -142,6 +142,45 @@
 % Publication database
 \input{publications.tex}
 
+% Research software and open-source contributions
+\newcommand{\cvsoftwareentry}[5]{%
+    \Needspace{3\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}Y r@{}}
+        \textbf{#1} {\small\textit{--- #2}} &
+        {\small #3 \quad #5}
+    \end{tabularx}
+    \vspace{-1pt}
+    {\small #4\par}
+    \vspace{6pt}
+}
+
+\newcommand{\cvsoftwaregroup}[3]{%
+    \Needspace{5\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}Y r@{}}
+        \textbf{#1} &
+        {\small #3}
+    \end{tabularx}
+    \vspace{-2pt}
+    {\small\color{cvgray}\textit{#2}\par}
+    \vspace{3pt}
+}
+
+\newcommand{\cvsoftwaresubentry}[4]{%
+    \Needspace{3\baselineskip}
+    \begingroup
+    \leftskip=0.8em
+    \begin{tabularx}{\dimexpr\textwidth-0.8em\relax}{@{}Y r@{}}
+        {\small\textbf{#1} \textit{--- #2}} &
+        {\small #4}
+    \end{tabularx}
+    \vspace{-1pt}
+    {\small #3\par}
+    \endgroup
+    \vspace{4pt}
+}
+% Software database
+\input{software.tex}
+
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -229,13 +268,13 @@
 \cvresearchentry
     {Graduate Research Assistant}
     {Sept. 2024--Present}
-    {Cognitive Computational Neuroscience Lab (CoCo Lab)
+    {Cognitive \& Computational Neuroscience Lab (CoCo Lab) (CoCo Lab)
     \quad\textbullet\quad
     Mila -- Quebec AI Institute}
     {Montréal, Canada}
 
 \begin{cvresearchitems}
-    \item \textbf{Dynamic Decision-making:} Investigating neural dynamics using EEG, MEG,
+    \item \textbf{Dynamic decision-making:} Investigating neural dynamics using EEG, MEG,
     and behavior through low-dimensional trajectories, connectivity and complexity measures,
     and computational models.
 
@@ -265,7 +304,7 @@
     {Montréal, Canada}
 
 \begin{cvresearchitems}
-    \item \textbf{Clinical data:} Curated ~1,300 pediatric EEG
+    \item \textbf{Clinical data:} Curated $\sim$1,300 pediatric EEG
     recordings spanning epilepsy, ADHD, and autism, with medication and
     comorbidity metadata.
 
@@ -335,6 +374,8 @@
     \item Developed Tunisian Arabic NLP methods for intent extraction,
     keyword/NER extraction, and sentence segmentation.
 \end{cvresearchitems}
+
+
 \section{Publications \& Manuscripts}
 
 \cvpubcategory{Peer-Reviewed Journal Articles}
@@ -365,5 +406,11 @@
 
 \pubCoordRegion
 \pubBerradaCognition
+
+\section{Research Software \& Open-Source Contributions}
+\softwareMNE
+\softwareCoCoPipe
+\softwareCoordRegion
+\softwareJamica
 
 \end{document}
