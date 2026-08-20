@@ -121,6 +121,27 @@
         partopsep=0pt
     ]}
     {\end{itemize}\endgroup\vspace{4pt}}
+
+% Publications
+\newcommand{\cvpubcategory}[1]{%
+    \Needspace{3\baselineskip}
+    \vspace{3pt}
+    {\normalsize\bfseries #1\par}
+    \vspace{3pt}
+}
+
+\newcommand{\cvpub}[2]{%
+    \Needspace{2.5\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}Y R{0.08\textwidth}@{}}
+        {\small #1} &
+        {\small\color{cvgray} #2}
+    \end{tabularx}
+    \vspace{3pt}
+}
+
+% Publication database
+\input{publications.tex}
+
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -136,6 +157,8 @@
     hamza.abdelhedi [at] umontreal.ca
     \quad\textbullet\quad
     \href{https://www.hamzaabdelhedi.com}{Website}
+    \quad\textbullet\quad
+    \href{https://scholar.google.com/citations?user=xcX55QsAAAAJ&hl=en}{Scholar}
     \quad\textbullet\quad
     \href{https://github.com/BabaSanfour}{GitHub}
     \quad\textbullet\quad
@@ -214,11 +237,10 @@
 \begin{cvresearchitems}
     \item \textbf{Dynamic Decision-making:} Investigating neural dynamics using EEG, MEG,
     and behavior through low-dimensional trajectories, connectivity and complexity measures,
-    and computational models..
+    and computational models.
 
-    \item \textbf{Foundation models:} Benchmarking existing EEG/MEG foundation
-    models and training new models, evaluating representations, cross-dataset
-    generalization, and downstream performance.
+    \item \textbf{Foundation models:} Evaluating and developing EEG/MEG foundation
+    models with a focus on representations and cross-dataset generalization.
 
     \item \textbf{Research software:} Developing reusable EEG/MEG tools and
     pipelines for lab-wide use, including MNE-Denoise, CoCo-PiPe, and Jamica.
@@ -243,18 +265,17 @@
     {Montréal, Canada}
 
 \begin{cvresearchitems}
-    \item \textbf{Clinical data:} Curated and structured approximately 1,300
-    pediatric EEG recordings spanning epilepsy, ADHD, and autism , with medication
-    and comorbidity metadata.
+    \item \textbf{Clinical data:} Curated ~1,300 pediatric EEG
+    recordings spanning epilepsy, ADHD, and autism, with medication and
+    comorbidity metadata.
 
-    \item \textbf{Computational analysis:} Extracted electrophysiological
-    features and applied dimensionality reduction, machine learning, and
-    foundation-model analyses, including embeddings, linear probing,
-    and fine-tuning.
+    \item \textbf{Computational analysis:} Studied brain dynamics and candidate
+    biomarkers using electrophysiological features, foundation-model representations,
+    machine learning, and dimensionality reduction, including embedding extraction,
+    linear probing, and fine-tuning.
 
-    \item \textbf{Medication effects:} Investigating medicated versus
-    unmedicated ADHD and medication-group differences, including effects of
-    age, sex, and comorbidities.
+    \item \textbf{Medication effects:} Comparing medicated and unmedicated ADHD
+    and medication groups, stratified by age, sex, and comorbidities.
 \end{cvresearchitems}
 
 
@@ -274,8 +295,7 @@
     faces.
 
     \item \textbf{Computational analysis:} Applied time-resolved multivariate
-    and representational analyses to MEG and deep-network features to
-    characterize biological--artificial correspondences.
+    and representational analyses to MEG and ANNs.
 \end{cvresearchitems}
 
 
@@ -315,5 +335,35 @@
     \item Developed Tunisian Arabic NLP methods for intent extraction,
     keyword/NER extraction, and sentence segmentation.
 \end{cvresearchitems}
+\section{Publications \& Manuscripts}
+
+\cvpubcategory{Peer-Reviewed Journal Articles}
+
+\pubOswaldResting
+\pubDehganMEG
+\pubTholkeImbalance
+
+
+\cvpubcategory{Peer-Reviewed Conference Proceedings}
+
+\pubPNPL
+
+
+\cvpubcategory{Under Review}
+
+\pubBenSlimaneEEG
+\pubOswaldNOC
+
+
+\cvpubcategory{Peer-Reviewed Conference Abstracts \& Short Papers}
+
+\pubCCNFaceDynamics
+\pubCCNFaceRepresentations
+
+
+\cvpubcategory{Preprints}
+
+\pubCoordRegion
+\pubBerradaCognition
 
 \end{document}
