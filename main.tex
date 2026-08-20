@@ -182,13 +182,19 @@
 \input{software.tex}
 
 % Awards and scholarships
-\newcommand{\cvaward}[4]{%
+\newcommand{\cvaward}[5]{%
     \Needspace{2.1\baselineskip}
     \begingroup
     \renewcommand{\arraystretch}{0.90}
     \begin{tabularx}{\textwidth}{@{}Y r@{}}
-        {\small\textbf{#1} --- #2} &
-        {\small #3 \quad\textbullet\quad #4}
+        {\small
+        \textbf{#1}, #2%
+        \if\relax\detokenize{#3}\relax
+        \else
+            {\color{cvgray}\textit{ (#3)}}%
+        \fi
+        } &
+        {\small #4 \quad\textbullet\quad #5}
     \end{tabularx}
     \endgroup
     \vspace{-10pt}
