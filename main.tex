@@ -237,6 +237,31 @@
 % Teaching database
 \input{teaching.tex}
 
+% Research mentoring
+\newcommand{\cvmentoringentry}[3]{%
+    \Needspace{2.5\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}Y r@{}}
+        \textbf{#1}
+        {\small\color{cvgray}\textit{ (#2)}} &
+        {\small\textit{#3}}
+    \end{tabularx}
+    \vspace{-7pt}
+}
+\newenvironment{cvmentoringitems}
+    {\begingroup\small
+    \begin{itemize}[
+        leftmargin=1.15em,
+        labelsep=0.45em,
+        itemsep=0.5pt,
+        topsep=0pt,
+        parsep=0pt,
+        partopsep=0pt
+    ]}
+    {\end{itemize}\endgroup\vspace{4pt}}
+
+% Mentoring database
+\input{mentoring.tex}
+
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -520,6 +545,18 @@
 \teachingPSYTwoOOEight
 \teachingPSYTwoOOSeven
 \teachingArabsNeuro
+
+
+\section{Research Mentoring}
+
+\mentoringMaryem
+\mentoringSyrine
+\mentoringFouad
+\mentoringAlexandre
+\mentoringMehdi
+\mentoringAnis
+\mentoringMeriem
+
 
 \section{Selected Scientific Training \& Summer Schools}
 
