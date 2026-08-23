@@ -99,6 +99,9 @@
     \vspace{6pt}
 }
 
+% Education database
+\input{education.tex}
+
 % Research and professional experience
 \newcommand{\cvresearchentry}[4]{%
     \Needspace{4\baselineskip}
@@ -323,6 +326,20 @@
 % Leadership and service database
 \input{service.tex}
 
+
+% Technical skills
+\newcommand{\cvskill}[2]{%
+    \Needspace{1.5\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}p{0.23\textwidth}Y@{}}
+        {\small\textbf{#1}} &
+        {\small #2}
+    \end{tabularx}
+    \vspace{1pt}
+}
+
+% Skills database
+\input{skills.tex}
+
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -351,190 +368,22 @@
 
 \section{Education}
 
-\cventry
-    {Université de Montréal -- Faculty of Medicine}
-    {Montréal, Canada}
-    {PhD in Biomedical Engineering}
-    {Sept. 2024--Present}
+\educationPhD
+\educationMSc
+\educationSUPCOM
+\educationPreparatory
+\educationHighSchool
 
-\cvdetail{
-    Supervisor: Prof. Karim Jerbi
-    \quad\textbullet\quad
-    Research affiliations: CoCo Lab, Mila
-}
-
-\cventry
-    {Université de Montréal -- Dep. of Computer Science and Operations Research (DIRO)}
-    {Montréal, Canada}
-    {MSc in Computer Science -- Artificial Intelligence}
-    {Sept. 2022--Aug. 2024}
-
-\cvdetail{
-    Supervisor: Prof. Karim Jerbi
-    \quad\textbullet\quad
-    Co-supervisor: Prof. Shahab Bakhtiari
-    \quad\textbullet\quad
-    Research affiliations: CoCo Lab, Mila
-}
-
-\cventry
-    {University of Carthage -- Higher School of Communication of Tunis (SUP'COM)}
-    {Ariana, Tunisia}
-    {Engineering Diploma in Telecommunications -- Smart Imaging Applications}
-    {Sept. 2018--Oct. 2021}
-
-\cvnodetailspace
-
-\cventry
-    {University of Sfax -- Sfax Preparatory Institute for Engineering Studies}
-    {Sfax, Tunisia}
-    {Preparatory Studies in Mathematics and Physics}
-    {Sept. 2016--June 2018}
-
-\cvdetail{    
-    National engineering schools' entrance exam rank: 150/1,500 (top 10\%)
-}
-
-\cventry
-    {Farhat Hached Pioneer High School}
-    {Sfax, Tunisia}
-    {Baccalaureate in Mathematics}
-    {Sept. 2012--June 2016}
-
-\cvdetail{
-    Selective national Pioneer High School track
-}
 
 \section{Research \& Professional Experience}
 
-\cvresearchentry
-    {Graduate Research Assistant}
-    {Sept. 2024--Present}
-    {Cognitive \& Computational Neuroscience Lab (CoCo Lab)
-    \quad\textbullet\quad
-    Mila -- Quebec AI Institute}
-    {Montréal, Canada}
-
-\begin{cvresearchitems}
-    \item \textbf{Dynamic decision-making:} Investigating neural dynamics using EEG, MEG,
-    and behavior through low-dimensional trajectories, connectivity and complexity measures,
-    and computational models.
-
-    \item \textbf{Foundation models:} Evaluating and developing EEG/MEG foundation
-    models with a focus on representations and cross-dataset generalization.
-
-    \item \textbf{Research software:} Developing reusable EEG/MEG tools and
-    pipelines for lab-wide use, including MNE-Denoise, CoCo-PiPe, and Jamica.
-
-    \item \textbf{Research infrastructure:} Standardizing and managing shared lab
-    datasets and computational resources; led a successful Alliance Canada
-    Resource Allocation Competition (RAC) application securing 715 CPU-years
-    and 150 RGU-years (score: 4.3/5).
-
-    \item \textbf{Mentoring:} Mentoring junior researchers and developing
-    technical documentation, tutorials, and onboarding materials.
-\end{cvresearchitems}
-
-\cvresearchentry
-    {Research Collaborator}
-    {Jan. 2025--Present}
-    {CHU Sainte-Justine
-    \quad\textbullet\quad
-    Dr. Alexander G. Weil
-    \quad\textbullet\quad
-    Dr. Aristides Hadjinicolaou}
-    {Montréal, Canada}
-
-\begin{cvresearchitems}
-    \item \textbf{Clinical data:} Curated $\sim$1,300 pediatric EEG
-    recordings spanning epilepsy, ADHD, and autism, with medication and
-    comorbidity metadata.
-
-    \item \textbf{Computational analysis:} Studied brain dynamics and candidate
-    biomarkers using electrophysiological features, foundation-model representations,
-    machine learning, and dimensionality reduction, including embedding extraction,
-    linear probing, and fine-tuning.
-
-    \item \textbf{Medication effects:} Comparing medicated and unmedicated ADHD
-    and medication groups, stratified by age, sex, and comorbidities.
-\end{cvresearchitems}
-
-\cvresearchentry
-    {AI Lab Member / Research Contributor}
-    {2024--Present}
-    {Abundant Intelligences
-    \quad\textbullet\quad
-    Part-time since Mar. 2026}
-    {Montréal, Canada}
-
-\begin{cvresearchitems}
-    \item \textbf{AI development:} Supporting pods in developing AI systems and
-    language models for low-resource and Indigenous-language applications.
-
-    \item \textbf{Training \& knowledge mobilization:} Designed and delivered
-    technical workshops for the Future Imaginaries Workshop Series.
-
-    \item \textbf{Research infrastructure:} Helped design a new computational
-    infrastructure request supporting shared AI experimentation, local model
-    development, and community-governed research workflows.
-\end{cvresearchitems}
-
-\cvresearchentry
-    {Graduate Research Assistant}
-    {Sept. 2022--Aug. 2024}
-    {CoCo Lab
-    \quad\textbullet\quad
-    Systems Neuroscience and AI Lab (SNAILab)
-    \quad\textbullet\quad
-    Mila}
-    {Montréal, Canada}
-
-\begin{cvresearchitems}
-    \item \textbf{Face familiarity:} Investigated how familiarity shapes the
-    temporal evolution of neural representations of familiar and unfamiliar
-    faces.
-
-    \item \textbf{Computational analysis:} Applied time-resolved multivariate
-    and representational analyses to MEG and ANNs.
-\end{cvresearchitems}
-
-
-\cvresearchentry
-    {Research Intern -- Engineering Graduation Project}
-    {Apr.--Oct. 2021}
-    {UNIQUE -- Unifying Neuroscience and Artificial Intelligence in Quebec
-    \quad\textbullet\quad
-    CoCo Lab}
-    {Montréal, Canada}
-
-\begin{cvresearchitems}
-    \item Investigated human and artificial neural representations underlying
-    face recognition using MEG and convolutional neural networks.
-\end{cvresearchitems}
-
-
-\cvresearchentry
-    {Machine Learning Intern}
-    {July--Aug. 2020}
-    {SFM Technologies}
-    {Tunis, Tunisia}
-
-\begin{cvresearchitems}
-    \item Developed machine-learning methods for appliance identification from
-    electrical signals using state changes, harmonics, and device signatures.
-\end{cvresearchitems}
-
-
-\cvresearchentry
-    {Natural Language Processing Intern}
-    {July--Aug. 2019}
-    {HEXASTACK}
-    {Ariana, Tunisia}
-
-\begin{cvresearchitems}
-    \item Developed Tunisian Arabic NLP methods for intent extraction,
-    keyword/NER extraction, and sentence segmentation.
-\end{cvresearchitems}
+\experiencePhDRA
+\experienceCHUSJ
+\experienceAbundantIntelligences
+\experienceMScRA
+\experienceEngineeringIntern
+\experienceSFM
+\experienceHexastack
 
 
 \section{Publications \& Manuscripts}
@@ -677,5 +526,15 @@
     Intensive computational neuroscience program spanning theoretical,
     experimental, and data-driven approaches to neural systems.
 }
+
+\section{Technical Skills}
+
+\skillsNeuro
+\skillsML
+\skillsProgramming
+\skillsHPC
+\skillsSoftware
+\skillsLanguages
+
 
 \end{document}
