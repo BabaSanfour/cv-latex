@@ -262,6 +262,31 @@
 % Mentoring database
 \input{mentoring.tex}
 
+
+\newcommand{\cvpresentation}[4]{%
+    \Needspace{2.5\baselineskip}
+    \begin{tabularx}{\textwidth}{@{}Y R{0.22\textwidth}@{}}
+
+        \begin{minipage}[t]{\linewidth}
+            {\small\textbf{#1}}\par
+            \vspace{-2pt}
+            {\small\color{cvgray} #2}
+        \end{minipage}
+        &
+        \begin{minipage}[t]{\linewidth}
+            \raggedleft
+            {\small\textit{#4}}\par
+            \vspace{-1pt}
+            {\small\color{cvgray} #3}
+        \end{minipage}
+
+    \end{tabularx}
+    \vspace{4pt}
+}
+% presentations database
+\input{presentations.tex}
+
+
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
@@ -557,6 +582,21 @@
 \mentoringAnis
 \mentoringMeriem
 
+\section{Selected Scientific Presentations}
+
+\cvpubcategory{Oral Presentations}
+
+\presentationMNEDenoise
+\presentationCIRCA
+\presentationScaling
+
+
+\cvpubcategory{Poster Presentations}
+
+\presentationNAISys
+\presentationCCNTwentyFour
+\presentationCosyneTwentyFour
+\presentationMAIN
 
 \section{Selected Scientific Training \& Summer Schools}
 
