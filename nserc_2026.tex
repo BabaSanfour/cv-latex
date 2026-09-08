@@ -4,7 +4,7 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
-% The header and footer are included inside the required 0.75-inch margins.
+% Header/footer are included inside the required 0.75-inch margins.
 \usepackage[
   letterpaper,
   top=0.75in,
@@ -27,25 +27,39 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Twelve-point leading is exactly six lines per inch, the permitted maximum.
+% 12pt on 12pt = exactly 6 lines per inch (NSERC maximum).
 \AtBeginDocument{\fontsize{12pt}{12pt}\selectfont}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{2em}
 \raggedbottom
 
+% Part heading  (I. / II. / III.)
 \newcommand{\partheading}[1]{%
-  \noindent\textbf{#1}\par\vspace{1.5pt}%
+  \noindent\textbf{#1}\par\vspace{1pt}%
 }
 
+% Subsection heading (a. / b. / c. ...)
+% 3pt before — enough visual separation without wasting a full line.
 \newcommand{\nsercsubheading}[1]{%
   \Needspace{2\baselineskip}%
-  \vspace{0.5pt}%
-  \noindent\textbf{#1}\par%
+  \vspace{3pt}%
+  \noindent\textbf{#1}\par\vspace{0pt}%
 }
 
-\newcommand{\contribution}[1]{%
-  \noindent\hangindent=0.75em\hangafter=1 #1\par%
+% Numbered citation with hanging indent + italic role note on a second indented line.
+% Inter-item gap 2pt: perceptibly more than the 0pt between wrapped citation lines.
+\newcommand{\nsercitem}[2]{%
+  \noindent\hangindent=1.5em\hangafter=1 #1\par%
+  \noindent\hspace{1.5em}\textit{#2}\par%
+  \vspace{2pt}%
+}
+
+% Inline None entry — used for sections e and f to avoid wasting a blank line.
+\newcommand{\nsercnone}[1]{%
+  \Needspace{1\baselineskip}%
+  \vspace{3pt}%
+  \noindent\textbf{#1} None.\par%
 }
 
 \begin{document}
@@ -54,58 +68,83 @@
 
 \nsercsubheading{a. Articles published or accepted in peer-reviewed journals}
 
-% TODO NSERC: Confirm Hamza's exact role/contribution for this collaborative article.
-\contribution{Oswald, V., Landry, M., \textbf{Abdelhedi, H.}, et al. (2026). Resting-State Neural Oscillations Predict Individual Differences in Verbal Learning and Encoding Strategy Use. \textit{iScience}, 29(9), 117377.}
+\nsercitem{1.~Oswald, V., Landry, M., \textbf{Abdelhedi, H.}, Lippé, S., Robaey, P.,
+  \& Jerbi, K. (2026). Resting-State Neural Oscillations Predict Individual Differences
+  in Verbal Learning and Encoding Strategy Use. \textit{iScience}, 29(9), 117377.
+  doi:10.1016/j.isci.2026.117377}{Contributed machine-learning models and analyses;
+  collaborative article; PhD period.}
 
-% TODO NSERC: Confirm Hamza's exact role/contribution for this collaborative review.
-\contribution{Dehgan, A., \textbf{Abdelhedi, H.}, Hadid, V., Rish, I., \& Jerbi, K. (2025). Artificial Neural Networks for Magnetoencephalography: A Review of an Emerging Field. \textit{Journal of Neural Engineering}, 22(3).}
+\nsercitem{2.~Dehgan, A., \textbf{Abdelhedi, H.}, Hadid, V., Rish, I., \& Jerbi, K.
+  (2025). Artificial Neural Networks for Magnetoencephalography: A Review of an
+  Emerging Field. \textit{Journal of Neural Engineering}, 22(3).
+  doi:10.1088/1741-2552/addd4a}{Contributed to the first two sections; led writing
+  of Part~II; PhD period.}
 
-% TODO NSERC: Confirm Hamza's exact role/contribution for this collaborative article.
-\contribution{Thölke, P., Mantilla-Ramos, Y.-J., \textbf{Abdelhedi, H.}, et al. (2023). Class Imbalance Should Not Throw You Off Balance: Choosing the Right Classifiers and Performance Metrics for Brain Decoding with Imbalanced Data. \textit{NeuroImage}, 277, 120253.}
+\nsercitem{3.~Thölke, P., Mantilla-Ramos, Y.-J., \textbf{Abdelhedi, H.}, et al. (2023).
+  Class Imbalance Should Not Throw You Off Balance: Choosing the Right Classifiers and
+  Performance Metrics for Brain Decoding with Imbalanced Data. \textit{NeuroImage},
+  277, 120253. doi:10.1016/j.neuroimage.2023.120253}{Contributed across analyses,
+  interpretation, and manuscript development; MSc period.}
 
 \nsercsubheading{b. Other peer-reviewed contributions}
 
-% TODO NSERC: Add the exact acceptance/submission date and page count; confirm Hamza's role and study-stage label.
-\contribution{Elvers, G., Landau, G., Mantegna, F., \ldots, \textbf{Abdelhedi, H.}, et al. (2026). Benchmarking Non-Invasive Speech BCIs: Lessons Learned from the 2025 PNPL Competition. \textit{Proceedings of Machine Learning Research (NeurIPS 2025 Competition Track)}, in press.}
+% TODO NSERC: Confirm exact acceptance date and page count for CCN 2024 short paper
+%             (previous check indicated 5 pp; verify from the official proceedings PDF).
+\nsercitem{4.~\textbf{Abdelhedi, H.*}, Bakhtiari, S., \& Jerbi, K. (2024). Temporal
+  Dynamics of Face Recognition: Insights from Combining MEG and Artificial Neural
+  Networks. \textit{Cognitive Computational Neuroscience (CCN)}, 2024. Peer-reviewed
+  short paper; international conference; poster.}{First and presenting
+  author$^{*}$; MSc work.}
 
-% TODO NSERC: Add the exact acceptance/submission date and page count; confirm peer-review/publication status, presentation format, Hamza's role, and study-stage label.
-\contribution{Landau, G., Özdogan, M., Elvers, G., Mantegna, F., \ldots, \textbf{Abdelhedi, H.}, et al. (2025). The 2025 PNPL Competition: Speech Detection and Phoneme Classification in the LibriBrain Dataset. \textit{NeurIPS 2025 Competition Track}. Peer-reviewed; international conference.}
-
-% TODO NSERC: Add the exact acceptance/submission date and paper page count.
-\contribution{\textbf{Abdelhedi, H.*}, Bakhtiari, S., \& Jerbi, K. (2024). Temporal Dynamics of Face Recognition: Insights from Combining MEG and Artificial Neural Networks. \textit{Conference on Cognitive Computational Neuroscience (CCN)}. Peer-reviewed short paper; international poster; MSc work; first/presenting author.}
-
-% TODO NSERC: Add the exact acceptance/submission date, page count, presentation format, and correct study-stage label.
-\contribution{\textbf{Abdelhedi, H.}, \& Jerbi, K. (2022). Linking Human and Artificial Neural Representations Underlying Face Recognition: Insights from MEG and CNNs. \textit{CCN}. Peer-reviewed; international conference; first author.}
+% TODO NSERC: Confirm page count for CCN 2022 proceedings paper.
+\nsercitem{5.~\textbf{Abdelhedi, H.*}, \& Jerbi, K. (2022). Linking Human and Artificial
+  Neural Representations Underlying Face Recognition: Insights from MEG and CNNs.
+  \textit{CCN}, 2022. doi:10.32470/CCN.2022.1320-0. Peer-reviewed; international
+  conference; poster.}{First and presenting author$^{*}$; engineering graduation
+  period.}
 
 \nsercsubheading{c. Non-peer-reviewed contributions}
 
-% TODO NSERC: Add the exact journal submission date, manuscript page count, and final concise role statement.
-\contribution{\textbf{Abdelhedi, H.}, Bakhtiari, S., \& Jerbi, K. (2026). Stage-Dependent Signatures of Face Familiarity in Representational Timing and Strength: Evidence from MEG and Task-Optimized Neural Networks. bioRxiv preprint; submitted for journal peer review. MSc work; first author.}
+% TODO NSERC: Confirm current bioRxiv DOI (title updated; earlier DOI may differ).
+% TODO NSERC: Add exact journal submission date and manuscript page count.
+\nsercitem{6.~\textbf{Abdelhedi, H.}, Bakhtiari, S., \& Jerbi, K. (2026).
+  Task-optimized neural networks reveal distinct contributions of specialized and
+  broader visual learning to face familiarity in lateral occipital and fusiform cortex.
+  bioRxiv preprint; submitted for journal peer review.}{First author; led analyses,
+  figures, interpretation, and writing; MSc work.}
 
-% TODO NSERC: Add the exact submission date, page count, Hamza's specific contribution/mentoring role, and confirmed study-stage label.
-\contribution{Benslimane, M., \textbf{Abdelhedi, H.}, Hadid, V., \& Jerbi, K. (2026). Pretraining and Model Specialization Shape EEG Alignment During Dynamic Facial Expression Perception. Submitted to NeurIPS 2026 Main Track; under review.}
+% COSYNE 2024 deferred: same MSc research already in items 4 and 6; peer-review
+% classification unverified. Reinstate under (b) if formal review status is confirmed.
 
-% TODO NSERC: Confirm Hamza's exact role/contribution and the appropriate study-stage label.
-\contribution{Thölke, P., \textbf{Abdelhedi, H.}, Mantilla-Ramos, Y.-J., et al. (2026). A Roadmap for MEG Foundation Models. arXiv preprint.}
+% MEG Foundation Models roadmap deferred: Hamza's specific role to be confirmed
+% before submission; can be reinstated under (c) once role is documented.
 
-\contribution{\textbf{Abdelhedi, H.}, Mantilla-Ramos, Y.-J., Esmaeili, S., et al. (2025). Coord2Region: A Python Package for Mapping 3D Brain Coordinates to Atlas Labels, Literature, and AI Summaries. arXiv preprint. PhD-period work; first author; creator and maintainer.}
-
-% TODO NSERC: Add the exact submission date, manuscript page count, Hamza's role, and confirmed study-stage label.
-\contribution{Oswald, V., Jerbi, K., Sombrun, C., \textbf{Abdelhedi, H.}, et al. (2025). Exploring Aperiodic, Complexity and Entropic Brain Changes During Non-Ordinary States of Consciousness. Submitted to \textit{Neuroscience of Consciousness}; under review.}
+\nsercitem{7.~\textbf{Abdelhedi, H.}, Mantilla-Ramos, Y.-J., Esmaeili, S., Pascarella,
+  A., Hadid, V., \& Jerbi, K. (2025). Coord2Region: A Python Package for Mapping 3D
+  Brain Coordinates to Atlas Labels, Literature, and AI Summaries. arXiv
+  preprint.}{First author; creator and maintainer; PhD work.}
 
 \nsercsubheading{d. Technology transfer}
 
-\contribution{Esmaeili, S., \& \textbf{Abdelhedi, H.} (2025--present). MNE-Denoise, an open-source M/EEG denoising toolbox integrated into MNE-tools. Hamza: co-creator, author, and core maintainer; MNE-Python contributor with five merged pull requests in source-estimate processing, covariance estimation, and bug fixes.}
+% TODO NSERC: Confirm exact roles of E. Larson, D. McCloy, and K. Jerbi in
+%             MNE-Denoise before finalising the acknowledgement wording.
+\nsercitem{8.~Esmaeili, S., \& \textbf{Abdelhedi, H.} (2025--present). MNE-Denoise:
+  open-source M/EEG artifact-removal and denoising toolbox in the MNE-tools ecosystem
+  (\textit{mne-tools/mne-denoise}).}{Co-creator, author, core maintainer; 5 merged
+  PRs to core MNE-Python (source estimation, covariance, bug fixes); presented
+  ``MNE-Denoise: Denoising methods for the MNE ecosystem'' at the MNE Maintainers
+  Conference \& Sprint, Meta Paris, August 2026; PhD period.}
 
-\nsercsubheading{e. Contributions resulting from industrially relevant R\&D activities}
+% TODO NSERC: Confirm Hamza's specific technical contribution to Jamica
+%             (e.g., JAX implementation, MNE-Python integration) before final wording.
+\nsercitem{9.~Esmaeili, S., \textbf{Abdelhedi, H.}, et al. (2026). Jamica v0.3.0:
+  JAX-accelerated Adaptive Mixture ICA (AMICA) for EEG/MEG. Released 28~August 2026
+  (\textit{snesmaeili/jamica}).}{Contributor; PhD period.}
 
-\contribution{None.}
+\nsercnone{e. Contributions from industrially relevant R\&D activities:}
+\nsercnone{f. Awarded and submitted patents and copyrights:}
 
-\nsercsubheading{f. Awarded and submitted patents and copyrights}
-
-\contribution{None.}
-
-% * Presenting author is identified inline in the 2024 CCN entry.
+% $^{*}$ Presenting author marked with asterisk in the citation.
 
 % ============================================================
 % TODO NSERC PART II: Add the official Part II heading and content here.
