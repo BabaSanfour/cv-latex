@@ -1,8 +1,18 @@
+% !TeX program = xelatex
 \documentclass[12pt,letterpaper]{article}
 
-% NSERC requires 12-point Times New Roman throughout.
-\usepackage{fontspec}
-\setmainfont{Times New Roman}
+% NSERC final PDF: compile with XeLaTeX/LuaLaTeX to use actual Times New Roman.
+% A pdfLaTeX fallback is provided so automated checks do not fail; it uses
+% newtxtext, a metrically similar Times-style font, and should not be used for
+% the final submitted PDF.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{newtxtext}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+\fi
 \usepackage[hidelinks]{hyperref}
 
 % Without includeheadfoot: body text begins at exactly 0.75in from the paper edge.
@@ -34,6 +44,10 @@
 \setlength{\parskip}{0pt}
 \setlength{\emergencystretch}{3em}
 \raggedbottom
+
+% Symbols used in a way that works in both pdfLaTeX and Xe/LuaLaTeX.
+\newcommand{\presenting}{\textsuperscript{*}}
+\newcommand{\sharedfirst}{\textsuperscript{\ensuremath{\ddagger}}}
 
 % Part heading (I. / II. / III.)
 \newcommand{\partheading}[1]{%
@@ -84,20 +98,20 @@
 
 % TODO NSERC: Confirm exact acceptance date and page count for CCN 2024 paper
 %             (proceedings PDF at 2024.ccneuro.org; previous check indicated 5 pp).
-\nsercitem{4.~\textbf{Abdelhedi, H.}\textsuperscript{*}, Bakhtiari, S., \& Jerbi, K.
+\nsercitem{4.~\textbf{Abdelhedi, H.}\presenting, Bakhtiari, S., \& Jerbi, K.
   (2024). Temporal Dynamics of Face Recognition: Insights from Combining MEG and
   Artificial Neural Networks. \textit{Cognitive Computational Neuroscience (CCN)}, 2024.
   Peer-reviewed short paper; international poster.}{MSc; first/presenting author.}
 
 % TODO NSERC: Confirm peer-review classification from official COSYNE 2024 programme.
-\nsercitem{5.~\textbf{Abdelhedi, H.}\textsuperscript{*}, Bakhtiari, S., \& Jerbi, K.
+\nsercitem{5.~\textbf{Abdelhedi, H.}\presenting, Bakhtiari, S., \& Jerbi, K.
   (2024). Neural Representations of Face Recognition in Biological and Artificial
   Systems: Insights from MEG and CNNs. \textit{Computational and Systems
   Neuroscience (COSYNE)}, Portugal, 2024. International poster.}{MSc;
   first/presenting author.}
 
 % TODO NSERC: Confirm page count for CCN 2022 proceedings.
-\nsercitem{6.~\textbf{Abdelhedi, H.}\textsuperscript{*}, \& Jerbi, K. (2022).
+\nsercitem{6.~\textbf{Abdelhedi, H.}\presenting, \& Jerbi, K. (2022).
   Linking Human and Artificial Neural Representations Underlying Face Recognition:
   Insights from MEG and CNNs. \textit{CCN}, 2022.
   doi:10.32470/CCN.2022.1320-0. Peer-reviewed; international poster.}{Engineering
@@ -135,12 +149,12 @@
 
 % NOTE: Author order, shared-first status, and extended collaborator list are declared
 %       by the applicant for this NSERC version.
-\nsercitem{12.~\textbf{Abdelhedi, H.}\textsuperscript{‡}, Esmaeili,
-  S.\textsuperscript{‡}, Larson, E., McCloy, D., \& Jerbi, K. (2025--present).
+\nsercitem{12.~\textbf{Abdelhedi, H.}\sharedfirst, Esmaeili,
+  S.\sharedfirst, Larson, E., McCloy, D., \& Jerbi, K. (2025--present).
   \href{https://github.com/mne-tools/mne-denoise}{MNE-Denoise}: open-source M/EEG
   artifact-removal and denoising toolbox for the MNE-tools ecosystem
   \href{https://github.com/mne-tools/mne-denoise}{[GitHub]}.}{PhD;
-  \textsuperscript{‡}shared first authorship; co-creator/core maintainer; 5
+  shared first authorship; co-creator/core maintainer; 5
   MNE-Python PRs; presented MNE Maintainers Conf.\ \& Sprint, Meta Paris,
   Aug.~2026.}
 
@@ -156,7 +170,7 @@
 \noindent\textbf{e. Contributions resulting from participation in industrially relevant R\&D activities:} None.\par
 \noindent\textbf{f. Awarded and submitted patents and copyrights:} None.\par
 
-% \textsuperscript{*} Presenting author. \textsuperscript{‡} Shared first authorship.
+% * Presenting author. Double dagger = shared first authorship.
 
 % ============================================================
 % TODO NSERC PART II: Most significant contributions to research and development
