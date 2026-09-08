@@ -1,0 +1,118 @@
+\documentclass[12pt,letterpaper]{article}
+
+% NSERC requires 12-point Times New Roman throughout.
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% The header and footer are included inside the required 0.75-inch margins.
+\usepackage[
+  letterpaper,
+  top=0.75in,
+  bottom=0.80in,
+  left=0.75in,
+  right=0.76in,
+  includeheadfoot,
+  headheight=14.5pt,
+  headsep=6pt,
+  footskip=18pt
+]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{needspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Hamza Abdelhedi}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Twelve-point leading is exactly six lines per inch, the permitted maximum.
+\AtBeginDocument{\fontsize{12pt}{12pt}\selectfont}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+
+\newcommand{\partheading}[1]{%
+  \noindent\textbf{#1}\par\vspace{1.5pt}%
+}
+
+\newcommand{\nsercsubheading}[1]{%
+  \Needspace{2\baselineskip}%
+  \vspace{0.5pt}%
+  \noindent\textbf{#1}\par%
+}
+
+\newcommand{\contribution}[1]{%
+  \noindent\hangindent=0.75em\hangafter=1 #1\par%
+}
+
+\begin{document}
+
+\partheading{I. Contributions to research and development}
+
+\nsercsubheading{a. Articles published or accepted in peer-reviewed journals}
+
+% TODO NSERC: Confirm Hamza's exact role/contribution for this collaborative article.
+\contribution{Oswald, V., Landry, M., \textbf{Abdelhedi, H.}, et al. (2026). Resting-State Neural Oscillations Predict Individual Differences in Verbal Learning and Encoding Strategy Use. \textit{iScience}, 29(9), 117377.}
+
+% TODO NSERC: Confirm Hamza's exact role/contribution for this collaborative review.
+\contribution{Dehgan, A., \textbf{Abdelhedi, H.}, Hadid, V., Rish, I., \& Jerbi, K. (2025). Artificial Neural Networks for Magnetoencephalography: A Review of an Emerging Field. \textit{Journal of Neural Engineering}, 22(3).}
+
+% TODO NSERC: Confirm Hamza's exact role/contribution for this collaborative article.
+\contribution{Thölke, P., Mantilla-Ramos, Y.-J., \textbf{Abdelhedi, H.}, et al. (2023). Class Imbalance Should Not Throw You Off Balance: Choosing the Right Classifiers and Performance Metrics for Brain Decoding with Imbalanced Data. \textit{NeuroImage}, 277, 120253.}
+
+\nsercsubheading{b. Other peer-reviewed contributions}
+
+% TODO NSERC: Add the exact acceptance/submission date and page count; confirm Hamza's role and study-stage label.
+\contribution{Elvers, G., Landau, G., Mantegna, F., \ldots, \textbf{Abdelhedi, H.}, et al. (2026). Benchmarking Non-Invasive Speech BCIs: Lessons Learned from the 2025 PNPL Competition. \textit{Proceedings of Machine Learning Research (NeurIPS 2025 Competition Track)}, in press.}
+
+% TODO NSERC: Add the exact acceptance/submission date and page count; confirm peer-review/publication status, presentation format, Hamza's role, and study-stage label.
+\contribution{Landau, G., Özdogan, M., Elvers, G., Mantegna, F., \ldots, \textbf{Abdelhedi, H.}, et al. (2025). The 2025 PNPL Competition: Speech Detection and Phoneme Classification in the LibriBrain Dataset. \textit{NeurIPS 2025 Competition Track}. Peer-reviewed; international conference.}
+
+% TODO NSERC: Add the exact acceptance/submission date and paper page count.
+\contribution{\textbf{Abdelhedi, H.*}, Bakhtiari, S., \& Jerbi, K. (2024). Temporal Dynamics of Face Recognition: Insights from Combining MEG and Artificial Neural Networks. \textit{Conference on Cognitive Computational Neuroscience (CCN)}. Peer-reviewed short paper; international poster; MSc work; first/presenting author.}
+
+% TODO NSERC: Add the exact acceptance/submission date, page count, presentation format, and correct study-stage label.
+\contribution{\textbf{Abdelhedi, H.}, \& Jerbi, K. (2022). Linking Human and Artificial Neural Representations Underlying Face Recognition: Insights from MEG and CNNs. \textit{CCN}. Peer-reviewed; international conference; first author.}
+
+\nsercsubheading{c. Non-peer-reviewed contributions}
+
+% TODO NSERC: Add the exact journal submission date, manuscript page count, and final concise role statement.
+\contribution{\textbf{Abdelhedi, H.}, Bakhtiari, S., \& Jerbi, K. (2026). Stage-Dependent Signatures of Face Familiarity in Representational Timing and Strength: Evidence from MEG and Task-Optimized Neural Networks. bioRxiv preprint; submitted for journal peer review. MSc work; first author.}
+
+% TODO NSERC: Add the exact submission date, page count, Hamza's specific contribution/mentoring role, and confirmed study-stage label.
+\contribution{Benslimane, M., \textbf{Abdelhedi, H.}, Hadid, V., \& Jerbi, K. (2026). Pretraining and Model Specialization Shape EEG Alignment During Dynamic Facial Expression Perception. Submitted to NeurIPS 2026 Main Track; under review.}
+
+% TODO NSERC: Confirm Hamza's exact role/contribution and the appropriate study-stage label.
+\contribution{Thölke, P., \textbf{Abdelhedi, H.}, Mantilla-Ramos, Y.-J., et al. (2026). A Roadmap for MEG Foundation Models. arXiv preprint.}
+
+\contribution{\textbf{Abdelhedi, H.}, Mantilla-Ramos, Y.-J., Esmaeili, S., et al. (2025). Coord2Region: A Python Package for Mapping 3D Brain Coordinates to Atlas Labels, Literature, and AI Summaries. arXiv preprint. PhD-period work; first author; creator and maintainer.}
+
+% TODO NSERC: Add the exact submission date, manuscript page count, Hamza's role, and confirmed study-stage label.
+\contribution{Oswald, V., Jerbi, K., Sombrun, C., \textbf{Abdelhedi, H.}, et al. (2025). Exploring Aperiodic, Complexity and Entropic Brain Changes During Non-Ordinary States of Consciousness. Submitted to \textit{Neuroscience of Consciousness}; under review.}
+
+\nsercsubheading{d. Technology transfer}
+
+\contribution{Esmaeili, S., \& \textbf{Abdelhedi, H.} (2025--present). MNE-Denoise, an open-source M/EEG denoising toolbox integrated into MNE-tools. Hamza: co-creator, author, and core maintainer; MNE-Python contributor with five merged pull requests in source-estimate processing, covariance estimation, and bug fixes.}
+
+\nsercsubheading{e. Contributions resulting from industrially relevant R\&D activities}
+
+\contribution{None.}
+
+\nsercsubheading{f. Awarded and submitted patents and copyrights}
+
+\contribution{None.}
+
+% * Presenting author is identified inline in the 2024 CCN entry.
+
+% ============================================================
+% TODO NSERC PART II: Add the official Part II heading and content here.
+% ============================================================
+
+% ============================================================
+% TODO NSERC PART III: Add the official Part III heading and content here.
+% ============================================================
+
+\end{document}
