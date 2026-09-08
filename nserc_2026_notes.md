@@ -11,9 +11,8 @@ No missing date, page count, role, or publication status has been inferred or in
   (no `includeheadfoot`); body text begins at exactly 0.75in from paper edge.
 - `headheight=14.5pt`, `headsep=3pt`, `footskip=18pt`.
 - Leading: 12pt/12pt = 6 lines per inch (NSERC maximum).
-- Part I currently compiles to ~0.82 page, 12 entries, 1 page total.
-- Parts II and III remain as commented placeholders; combined document must not exceed
-  2 pages.
+- Part I now contains 13 entries. Re-check compiled length after this revision before drafting
+  Parts II and III; combined document must not exceed 2 pages.
 
 ---
 
@@ -25,6 +24,10 @@ No missing date, page count, role, or publication status has been inferred or in
 - CCN 2022: doi:10.32470/CCN.2022.1320-0 ✓
 - MEG Foundation Models roadmap: arXiv:2609.04461 ✓
 - Coord2Region: arXiv:2512.18165 ✓
+- Oswald consciousness manuscript: arXiv:2509.19254 ✓
+- Jamica v0.3.0: doi:10.5281/zenodo.21817485 ✓
+- MNE-Denoise repository: https://github.com/mne-tools/mne-denoise ✓
+- Jamica repository: https://github.com/snesmaeili/jamica ✓
 
 ---
 
@@ -62,99 +65,98 @@ No missing date, page count, role, or publication status has been inferred or in
 - Study stage: "engineering graduation period" (pre-MSc work).
 - TODO: Confirm page count from the official CCN 2022 proceedings PDF.
 
-**7. PNPL retrospective — Elvers et al. 2026**
-- This is the retrospective/lessons-learned paper (distinct from the 2025 competition
-  paper, Landau et al. 2025, arXiv:2506.10165, and the 2026 competition paper,
-  Mantegna et al. 2026, arXiv:2609.03231).
-- TODO: Confirm Hamza's specific contribution (competition organisation, infrastructure,
-  benchmarking, data preparation, evaluation, writing, or coordination).
-- TODO: Confirm the final publication venue, volume/page, and whether the PMLR
-  classification as peer-reviewed is accurate for this specific paper.
-- TODO: Confirm the final author list and Hamza's position in it.
-- This entry has the lowest priority in section (b). Remove if space becomes tight
-  or if the role cannot be documented precisely.
+**PNPL retrospective — Elvers et al. 2026**
+- Removed from Part I in the current revision to prioritize first-author, mentoring-linked,
+  and brain-dynamics contributions.
+- Can be restored if space permits and Hamza's specific contribution is documented precisely.
 
 ---
 
 ## Section c — non-peer-reviewed contributions
 
-**8. Face-familiarity manuscript — Abdelhedi et al. 2026**
+**7. Face-familiarity manuscript — Abdelhedi et al. 2026**
 - Title updated to the CURRENT version:
   "Task-optimized neural networks reveal distinct contributions of specialized and
   broader visual learning to face familiarity in lateral occipital and fusiform cortex"
-- The CV source still shows the OLD title. The old bioRxiv entry's DOI may differ
-  from the updated-title version.
-- TODO: Confirm the current bioRxiv DOI for the updated title (search bioRxiv
-  directly by title before final submission).
+- The general CV source still shows the OLD title and should be updated separately.
+- TODO: Confirm the current bioRxiv DOI for the updated-title version.
 - TODO: Add exact journal submission date.
-- TODO: Add manuscript page count if required by current NSERC electronic
-  submission instructions.
 - Status: bioRxiv preprint; submitted for journal peer review. Do NOT move to
   section (a) until formal acceptance is documented.
 
+**8. Benslimane et al. 2026 — NeurIPS 2026 under review**
+- Reinstated because it adds evidence of research mentoring and collaborative leadership.
+- Maryem Benslimane is documented in `mentoring.tex` as an MSc student mentored by Hamza
+  from her engineering graduation internship through ongoing MSc work.
+- Current role note: "second author; research mentor to first author."
+- TODO: Add more precise intellectual/technical contribution if available (analyses,
+  interpretation, methods, writing, supervision) without inventing details.
+
 **9. MEG Foundation Models roadmap — Thölke, Abdelhedi, et al. 2026**
-- arXiv:2609.04461 confirmed (in CV source and task brief). Submitted 3 Sep 2026.
-- TODO: Confirm Hamza's specific contribution beyond "second author" before final
-  submission. Update role note if a more precise description is available.
+- arXiv:2609.04461 confirmed.
+- TODO: Confirm Hamza's specific contribution beyond "second author" before final submission.
 
 **10. Coord2Region — Abdelhedi et al. 2025**
-- arXiv:2512.18165 confirmed (in CV source).
-- First authorship and creator/maintainer role confirmed by task brief.
+- arXiv:2512.18165 confirmed.
+- First authorship and creator/maintainer role confirmed.
+
+**11. Oswald et al. 2025 — consciousness manuscript**
+- Reinstated because it adds breadth directly relevant to electrophysiology, aperiodic activity,
+  complexity and brain dynamics.
+- arXiv:2509.19254 confirmed; submitted to *Neuroscience of Consciousness*.
+- Current role note is deliberately conservative: "PhD; co-author."
+- TODO: Replace with a precise contribution statement once Hamza's role is confirmed.
+
+**Mantegna et al. 2026 — PNPL Competition**
+- Not added. It overlaps with the existing PNPL/LibriBrain line of work and adds less marginal
+  information than Benslimane or Oswald for this application.
 
 ---
 
 ## Section d — technology transfer
 
-**11. MNE-Denoise**
+**12. MNE-Denoise**
 - Authorship and order declared by applicant for this NSERC draft:
     1. Abdelhedi, H. (shared first)
     2. Esmaeili, S. (shared first)
     3. Larson, E.
     4. McCloy, D.
     5. Jerbi, K.
-- The CITATION.cff in the official repository previously listed only Esmaeili, S.
-  and Abdelhedi, H. as software authors.
-- TODO: Before final NSERC submission, verify or update the official MNE-Denoise
-  citation/authorship metadata so that the authorship order and list asserted here
-  matches the contribution's official or forthcoming citation. NSERC asks applicants
-  to report authorship as it appears (or will appear) in the original contribution.
-- Hamza is NOT an MNE-Python maintainer. He is a contributor with 5 merged PRs.
+- Hyperlink added directly to the official repository: https://github.com/mne-tools/mne-denoise
+- The repository's current `CITATION.cff` still lists only Esmaeili and Abdelhedi as software authors.
+- Applicant explicitly requested the extended author list and shared-first ordering for this NSERC version.
+- Hamza is not an MNE-Python maintainer; he is a contributor with 5 merged PRs.
 - MNE conference presentation: "MNE-Denoise: Denoising methods for the MNE ecosystem,"
-  MNE-Python Maintainers Conference & Sprint, Meta Paris, August 2026. Confirmed in
-  task brief.
+  MNE-Python Maintainers Conference & Sprint, Meta Paris, August 2026.
 
-**12. Jamica v0.3.0**
-- Version v0.3.0 publicly released 28 August 2026 (not a prerelease). Confirmed.
-- Repository: snesmaeili/jamica (Sina Esmaeili, lead).
-- TODO: Confirm Hamza's specific technical contribution (e.g., JAX implementation
-  of specific AMICA components, MNE-Python compatibility layer, HDF5 persistence,
-  or testing/CI) before final wording. Currently listed as "contributor."
+**13. Jamica v0.3.0**
+- Canonical five-author citation used: Esmaeili, Abdelhedi, Mantilla-Ramos, Pascarella, Jerbi.
+- Version v0.3.0 publicly released 28 August 2026.
+- DOI added: doi:10.5281/zenodo.21817485.
+- GitHub link added: https://github.com/snesmaeili/jamica
+- Current role note: "contributor; MNE-Python integration."
+- TODO: Refine with Hamza's exact technical contribution if more specific wording is available.
 
 ---
 
 ## Items deferred from Part I — conditions for reinstatement
 
 **CoCo-PiPe**
-- Not yet publicly released. Do not include in Part I until a public release exists.
-- REASSESS IMMEDIATELY if CoCo-PiPe is released before NSERC submission. If released,
-  it could replace a weaker contribution rather than simply extending Part I length.
+- Public GitHub repository exists, but assess whether there is a formal public release/version before
+  calling it a released research contribution in Part I.
+- If formally released before NSERC submission, it could replace a weaker line because Hamza is
+  creator/maintainer, which is strong evidence of independence.
 
-**Benslimane et al. 2026 (NeurIPS 2026 under review)**
-- More useful as evidence of mentoring/collaboration in Part III.
-- Reinstate in Part I only if NeurIPS outcome is known and accepted, and space permits.
-
-**Oswald et al. 2025 — consciousness manuscript**
-- Too peripheral to the main research narrative; deferred to keep Part I tight.
+**PNPL retrospective / Mantegna 2026**
+- Keep deferred unless space permits or a stronger role statement becomes available.
 
 ---
 
 ## NSERC classification reminders
 
-- All preprints and submitted manuscripts must remain in section (c) until formal
-  acceptance is documented.
+- All preprints and submitted manuscripts must remain in section (c) until formal acceptance is documented.
 - COSYNE abstract peer-review status: verify before final classification in (b).
-- PNPL retrospective (Elvers et al.): confirm PMLR/NeurIPS peer-review classification.
 - Do not list open-source software as an awarded copyright without official documentation.
 - Do not use impact factors, h-index, or journal prestige claims.
-- The ‡ (shared first authorship) for MNE-Denoise must be consistent with the official
-  citation metadata at the time of final submission.
+- The ‡ (shared first authorship) for MNE-Denoise must remain internally consistent with the applicant's
+  intended authorship representation for the contribution.
