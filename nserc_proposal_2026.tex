@@ -1,0 +1,89 @@
+% !TeX program = xelatex
+\documentclass[12pt,letterpaper]{article}
+
+% NSERC CGRS-D research proposal.
+% Compile final submission with XeLaTeX/LuaLaTeX to use actual Times New Roman.
+% pdfLaTeX fallback is only for automated checks.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{newtxtext}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+\fi
+\usepackage[hidelinks]{hyperref}
+
+% Match the NSERC attachment style used in nserc_2026.tex.
+% The body text begins at exactly 0.75in from the paper edge; the running
+% name and page number live in the margin areas above/below the text block.
+\usepackage[
+  letterpaper,
+  top=0.75in,
+  bottom=0.75in,
+  left=0.75in,
+  right=0.75in,
+  headheight=14.5pt,
+  headsep=3pt,
+  footskip=18pt,
+]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{needspace}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Hamza Abdelhedi}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% 12pt on 12pt = exactly 6 lines per inch (NSERC maximum).
+\AtBeginDocument{\fontsize{12pt}{12pt}\selectfont}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+
+\newcommand{\proposalheading}[1]{%
+  \begin{center}\textbf{#1}\end{center}\vspace{-4pt}%
+}
+
+\newcommand{\nsercsection}[1]{%
+  \Needspace{2\baselineskip}%
+  \vspace{3pt}%
+  \noindent\textbf{#1}\par\vspace{0pt}%
+}
+
+\newcommand{\refnum}[1]{\textsuperscript{[#1]}}
+
+\begin{document}
+
+\proposalheading{Brain-wide neural dynamics of human decisions under changing evidence}
+
+\nsercsection{Background and knowledge gap}
+Perceptual decisions are often studied while the evidence supporting each choice remains stationary within a trial. These paradigms have established influential accounts in which noisy evidence accumulates toward commitment, but distinct accumulation and termination mechanisms can generate overlapping behavioural predictions, making their neural implementation difficult to adjudicate from behaviour alone.\refnum{1,2} Dynamic decisions provide additional leverage: when evidence changes during deliberation, the brain must determine how strongly prior information should continue to constrain the current decision state, how quickly that state should update, and when deliberation should give way to commitment. Dynamic-evidence paradigms have revealed urgency signals, adaptive temporal weighting, and decision-related electroencephalographic (EEG) activity in humans,\refnum{3--6} while invasive recordings show distributed neural populations evolving toward commitment and, more recently, transitions between input-driven and internally dominated dynamical regimes.\refnum{7,8}
+
+Whole-head magnetoencephalography (MEG) during the Tokens task has further shown that dynamic decisions unfold through low-dimensional oscillatory trajectories: alpha- and beta-band components track evolving sensory information across visual and sensorimotor systems, with alpha activity related to choice commitment and beta activity to motor execution.\refnum{9} Yet the central mechanism remains unresolved. We do not know how current evidence, evidence history, urgency, and distributed neural coordination jointly organize these brain-wide trajectories; how those trajectories change when new evidence contradicts an emerging choice; or whether commitment corresponds to continuous evolution or to a distinct, potentially revisable, change in neural dynamics.
+
+\nsercsection{Preliminary results}
+My doctoral work builds directly on this foundation. In the primary Tokens dataset (32 healthy adults; 275-sensor MEG; individual MRI; 16,324 trials), my preliminary analyses reproduce the previously reported low-dimensional oscillatory decision trajectories. I am now leading a first-author replication and extension that adds source-resolved analyses of large-scale functional coordination. Behaviour is sufficiently structured to constrain candidate mechanisms: mean accuracy is 83.7\%, decisions are faster in Fast than Slow blocks (approximately 1186 vs. 1314 ms), and psychophysical kernels show systematic temporal weighting of the token sequence. I have compared four sequential-sampling mechanisms using held-out likelihood; among the models tested, a multiplicative urgency account is currently preferred in 28/32 participants, and model identity is recovered in 47/48 simulations. Importantly, this behavioural preference is treated as a source of competing latent predictions rather than as proof of a biological mechanism. Misleading trials also provide within-trial cases in which later evidence opposes an emerging decision, creating a direct neural test of updating and commitment. Together, these results establish both the neural phenomenon and the behavioural leverage needed for the proposed work.
+
+\nsercsection{Central hypothesis and objectives}
+I hypothesize that dynamic decisions emerge from evolving brain-wide neural states jointly shaped by current sensory evidence, recent evidence history, and time-dependent commitment pressure. Controlled changes in evidence will reveal how strongly prior information constrains these states, while late contradictory evidence will determine whether commitment behaves as a fixed endpoint or as a revisable transition.
+
+\textbf{Aim 1 --- Determine how evidence, urgency, and distributed coordination organize brain-wide decision dynamics.} Building on the replicated MEG trajectories, I will quantify how momentary evidence, temporally weighted evidence history, and model-derived urgency explain the evolving source-resolved neural state and its large-scale connectivity as commitment approaches. I predict that evidence-related and time/urgency-related signals will account for distinguishable components of the neural state, with systematic reconfiguration of distributed coordination near commitment. Complementary complexity measures will be used only where informative to characterize broader changes in global brain state.
+
+\textbf{Aim 2 --- Determine how brain-wide neural states update when evidence changes or reverses.} Misleading trials will be used as within-trial perturbations. I will estimate neural evidence-history kernels to measure how strongly evidence from successive past moments predicts the current neural state, and combine these with trajectory geometry to quantify how rapidly the state redirects after evidence changes direction. Fast and Slow blocks will test whether temporal weighting adapts when waiting carries different costs. I predict that the influence of prior evidence will decline with lag and that contradictory new evidence will redirect the neural state more rapidly when commitment pressure is greater.
+
+\textbf{Aim 3 --- Determine whether commitment corresponds to a transition in brain-wide dynamics and whether that state remains reversible.} I will identify candidate commitment transitions using convergent state-space analyses and validate their behavioural relevance against the temporal influence of subsequent evidence on choice. Late contradictory evidence will then provide the decisive test: if commitment is effectively absorbing, post-transition evidence should have little influence and the neural state should remain within the committed regime; if commitment remains revisable, contradictory evidence should redirect the state and predict changes of choice. I predict a reproducible reorganization of brain-wide dynamics near commitment, while allowing the data to determine whether that regime is absorbing or revisable.
+
+\nsercsection{Approach, generalization, and individual differences}
+The Tokens MEG dataset will support all three aims. MRI-informed source reconstruction will provide cortical time series for oscillatory state-space, connectivity, and encoding analyses. Trial-wise latent quantities from competing decision models will be related to neural dynamics using cross-validated analyses and matched surrogate controls; model comparison will adjudicate neural predictions rather than assume that the behaviourally preferred account is correct. The primary claims concern distributed brain-wide dynamics, acknowledging the spatial limits of MEG source estimation.
+
+An independent dynamic face-morph cohort (74 healthy adults; 256-channel EEG; behaviour; MRI) provides a complementary test of generalization across task and modality. Prior work in this cohort identified EEG signals related to evidence, decision variables, and urgency, with substantial between-participant variation in urgency.\refnum{3} My preliminary behavioural analyses further identify 42 early and 32 late responders during ambiguous trials, with later responders committing with more evidence. I will test whether the evidence-, urgency-, and commitment-related organization identified in MEG generalizes to EEG and whether neural dynamics explain continuous and group-level variation in commitment strategy. Where independent trait measures are available, these neural-computational profiles will also be related to stable behavioural or personality characteristics.
+
+\nsercsection{Significance and feasibility}
+This project will move human dynamic-decision neuroscience from describing decision-related signals to explaining how distributed neural states update and commit while evidence itself changes. It will determine how current and past evidence interact with urgency, whether decision formation involves coordinated reconfiguration across the brain, and whether commitment is a continuous endpoint or a distinct state that can still be revised. The work is feasible because both datasets are already collected, the core MEG trajectory results are being replicated, behavioural model comparison and recovery are complete, psychophysical kernels and reversal-relevant trial structure are established, and source-level analyses are operational. The resulting first-author MEG replication and connectivity extension will be submitted as part of this doctoral work, with analysis code released openly. Participant composition will be reported transparently, and subgroup or trait interpretations will be limited to effects supported by the available sample sizes.
+
+\end{document}
