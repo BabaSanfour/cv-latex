@@ -1,0 +1,48 @@
+% !TeX program = xelatex
+\documentclass[12pt,letterpaper]{article}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage{newtxtext}
+\else
+  \usepackage{fontspec}
+  \setmainfont{Times New Roman}
+\fi
+\usepackage[hidelinks]{hyperref}
+\usepackage[letterpaper,top=0.75in,bottom=0.75in,left=0.75in,right=0.75in,headheight=14.5pt,headsep=3pt,footskip=18pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage{needspace}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{Hamza Abdelhedi}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\AtBeginDocument{\fontsize{12pt}{12pt}\selectfont}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{3em}
+\raggedbottom
+\newcommand{\eligsection}[1]{\Needspace{2\baselineskip}\vspace{3pt}\noindent\textbf{#1}\par\vspace{0pt}}
+\begin{document}
+
+\begin{center}
+\textbf{Justification for Eligibility of Proposed Research}
+\end{center}
+\vspace{-4pt}
+
+\eligsection{Primary objective and subject matter}
+I am a doctoral student in biomedical engineering, but the proposed research is fundamental computational and behavioural neuroscience. It investigates a normal cognitive process in healthy adults: how distributed human brain activity transforms changing sensory evidence into a decision and commitment to action. Using two existing datasets that are currently being analysed in my PhD---whole-head magnetoencephalography (MEG) and high-density electroencephalography (EEG), each with individual MRI---I test how brain-wide neural states evolve with evidence and urgency, how they update when evidence reverses, and whether commitment corresponds to a transition that remains open to revision. The intended outcome is mechanistic knowledge of normal human information processing, not a health or clinical outcome.
+
+\eligsection{Why the research falls within NSERC's mandate}
+Current tri-agency guidance identifies research on fundamental psychological processes and their underlying neural mechanisms as eligible for NSERC support, including cognition and sensorimotor integration. NSERC also explicitly considers research seeking to understand fundamental processes in healthy humans to be eligible. This project fits that description directly: all participants are healthy adults, the scientific questions concern the neural mechanisms of cognition, and the proposed analyses test general principles of decision formation rather than a disease-specific hypothesis.
+
+The natural sciences and engineering contribution is substantive rather than incidental. The project combines quantitative neurophysiology, MRI-informed source reconstruction, signal processing, dynamical-systems analysis, functional connectivity, and computational modelling to test explicit hypotheses about distributed neural dynamics. Competing decision models provide trial-wise latent predictions that are adjudicated against neural data, while state-space and connectivity analyses quantify how population activity and large-scale coordination change during deliberation and commitment. These methods are instruments for answering the neuroscience questions; the primary contribution is new knowledge about the organization and dynamics of the healthy human brain.
+
+\eligsection{Why the project is not primarily health research}
+No objective concerns the etiology, diagnosis, treatment, prevention, prognosis, or rehabilitation of any physical or mental disease, abnormality, or dysfunction. The project includes no patient or clinical population, medication or therapeutic manipulation, clinical trial, diagnostic or prognostic tool, treatment-response measure, or health-care outcome. It therefore does not seek the health-related outcomes that would make CIHR the primary granting agency. Any future clinical application of the findings would be outside the scope of this proposal.
+
+\eligsection{Overlap with psychology and individual differences}
+Decision-making is also studied in psychology, but the intended outcome here is the neural implementation of a fundamental cognitive mechanism, measured with human electrophysiology and analysed quantitatively. Exploratory analyses of individual differences, including stable behavioural or personality traits where such measures are available, are secondary tests of variability in the same neural-computational mechanism; they are not the primary subject or intended outcome of the research. The project therefore aligns with NSERC's mandate for fundamental cognition and its underlying neural mechanisms rather than with social, personality, educational, or clinically oriented research.
+
+\end{document}
